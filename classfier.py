@@ -3,8 +3,21 @@ import pickle
 import os
 import numpy as np
 from PIL import Image, ImageOps
+import boto3
+import botocore
+
+
+s3 = boto3.resource("s3")
 
 def classify(cell_image):
+
+    try:
+        s3.Bucket(os.environ['BUCKET_NAME']).download_file(os.environ['MODEL_NAME'], 'Malaria_predictor.h5')
+    except botocore.exceptions.ClientError as e:
+        if e.response['Error']['Code'] == "404":
+            print("The object does not exist.")
+        else:
+            raise
 
     model = load_model("Malaria_predictor.h5")
 
