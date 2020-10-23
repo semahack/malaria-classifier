@@ -4,6 +4,7 @@ import os
 import numpy as np
 from PIL import Image, ImageOps
 import botocore
+import boto3
 import os
 
 

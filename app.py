@@ -2,7 +2,6 @@ import streamlit as st
 from classfier import classify
 from PIL import Image
 import time
-import boto3
 
 st.title("Malaria Cell Classifier")
 st.header("Predict if cell is Infected with Malaria or Uninfected")
