@@ -6,7 +6,7 @@ from PIL import Image, ImageOps
 
 def classify(cell_image):
 
-    model = load_model("malaria_predictor.h5")
+    model = load_model("Malaria_predictor.h5")
 
     data = np.ndarray(shape=(1, 150, 150, 3), dtype=np.float32)
     image = cell_image
