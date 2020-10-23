@@ -22,6 +22,7 @@ def classify(cell_image):
     pred = model.predict(data)
 
     del model
+    os.remove("Malaria_predictor.h5")
 
     return_data = { }
 
