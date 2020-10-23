@@ -4,7 +4,7 @@ from PIL import Image
 import time
 import boto3
 import botocore
-import
+import os
 
 
 s3 = boto3.resource("s3")
