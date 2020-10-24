@@ -1,5 +1,5 @@
 import streamlit as st
-#from classfier import classify
+from classfier import classify
 from PIL import Image
 import time
 import os
@@ -20,9 +20,9 @@ if uploaded_file is not None:
     st.write("")
     st.write("**Classifying image...**")
     
-  #  data = classify(image)
+    data = classify(image)
 
-   # if  data['infected'] == 1:
-    #    st.error(f"Cell is **infected** with **Probability** of **{data['probability']}**")
-    #else:
-     #   st.success(f"Cell is **uninfected** with **Probability** of **{ data['probability'] }**")
+    if  data['infected'] == 1:
+        st.error(f"Cell is **infected** with **Probability** of **{data['probability']}**")
+    else:
+        st.success(f"Cell is **uninfected** with **Probability** of **{ data['probability'] }**")
