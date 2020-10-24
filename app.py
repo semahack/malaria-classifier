@@ -5,8 +5,8 @@ import time
 import os
 
 
-
-
+with open("style.css") as f:
+    st.markdown('<style>{}</style>'.format(f.read()), unsafe_allow_html=True)
 
 st.title("Malaria Cell Classifier")
 st.header("Predict if cell is Infected with Malaria or Uninfected")
